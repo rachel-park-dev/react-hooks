@@ -6,8 +6,11 @@ const useBeforeLeave = (onBefore) => {
   }
 
   let handleMouseLeave = (event) => {
-    console.log(event);
-    onBefore();
+    const { clientY } = event;
+    if (clientY <= 0) {
+      onBefore();
+    }
+    //마우스가 위로 벗어났을 때만 에러를 발생시킴
   };
 
   useEffect(() => {
