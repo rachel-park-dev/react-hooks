@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactDOM } from "react";
 
 const useConfirm = (message = "", onConfirm, onCancel) => {
   if (typeof onConfrim !== "function") {
@@ -12,7 +13,11 @@ const useConfirm = (message = "", onConfirm, onCancel) => {
     if (window.confirm(message)) {
       onConfirm();
     } else {
-      onCancel();
+      try {
+        onCancel();
+      } catch (error) {
+        return;
+      }
     }
   };
 
