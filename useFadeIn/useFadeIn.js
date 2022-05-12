@@ -12,5 +12,5 @@ export const useFadeIn = (duration = 1, delay = 0) => {
       current.style.opacity = 1;
     }
   }, []);
-  return { ref: element, style: { opacity: 0 } };
+  return { ref: element, style: { opacity: "0" } };
 };
