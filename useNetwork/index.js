@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { useNetwork } from "./useNetwork";
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>{onLine ? "Online" : "OffLine"}</h1>
+      <h1>{onLine ? "Online" : "Offline"}</h1>
     </div>
   );
 }
