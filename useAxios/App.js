@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>{data && data.status}</h1>
-      <h2>{loading ? "loading" : "loading"}</h2>
+      <h2>{loading && "loading"}</h2>
       <button onClick={refetch}>Refetch Button</button>
     </div>
   );

@@ -11,10 +11,6 @@ const useAxios = (opts, axiosInstance = defaultAxios) => {
 
   const [trigger, setTrigger] = useState(0);
 
-  if (!opts.url) {
-    return;
-  }
-
   const refetch = () => {
     setState({
       ...state,
@@ -24,6 +20,10 @@ const useAxios = (opts, axiosInstance = defaultAxios) => {
   };
 
   useEffect(() => {
+    if (!opts.url) {
+      return;
+    }
+
     axiosInstance(opts)
       .then((data) => {
         setState({ ...state, loading: false, data });
