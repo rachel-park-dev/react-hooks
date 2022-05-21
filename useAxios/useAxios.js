@@ -27,7 +27,6 @@ const useAxios = (opts, axiosInstance = defaultAxios) => {
     axiosInstance(opts)
       .then((data) => {
         setState({ ...state, loading: false, data });
-        data.setHeader("Access-Control-Allow-origin", opts.url);
       })
       .catch((error) => {
         setState({ ...state, loading: false, error });
